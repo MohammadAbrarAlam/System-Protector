@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h3 class="mb-4">System Status</h3>
+
+<div class="row">
+
+<div class="col-md-4">
+<div class="card text-white bg-primary shadow">
+<div class="card-body text-center">
+<h4>CPU Usage</h4>
+<h2>{{ cpu }}%</h2>
+</div>
+</div>
+</div>
+
+<div class="col-md-4">
+<div class="card text-white bg-success shadow">
+<div class="card-body text-center">
+<h4>RAM Usage</h4>
+<h2>{{ ram }}%</h2>
+</div>
+</div>
+</div>
+
+<div class="col-md-4">
+<div class="card text-white bg-danger shadow">
+<div class="card-body text-center">
+<h4>Disk Usage</h4>
+<h2>{{ disk }}%</h2>
+</div>
+</div>
+</div>
+
+</div>
+
+{% endblock %}

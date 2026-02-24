@@ -1,0 +1,161 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<!-- Carousel -->
+<div id="patchCarousel" class="carousel slide mb-4">
+
+  <div class="carousel-inner">
+
+    <div class="carousel-item active">
+      <img src="https://source.unsplash.com/1200x300/?update,software"
+           class="d-block w-100">
+      <div class="carousel-caption">
+        <h4>Patch Management</h4>
+        <p>Keep your systems updated and secure</p>
+      </div>
+    </div>
+
+    <div class="carousel-item">
+      <img src="https://source.unsplash.com/1200x300/?security,technology"
+           class="d-block w-100">
+      <div class="carousel-caption">
+        <h4>Security Updates</h4>
+        <p>Protect systems from vulnerabilities</p>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+
+<div class="row">
+
+<!-- Add Patch Card -->
+<div class="col-md-4">
+
+<div class="card shadow">
+
+<div class="card-header bg-primary text-white">
+Add Patch
+</div>
+
+<div class="card-body">
+
+<form method="post">
+{% csrf_token %}
+
+<div class="mb-3">
+<label>System Name</label>
+<input type="text" name="system_name"
+       class="form-control" required>
+</div>
+
+<div class="mb-3">
+<label>Patch Version</label>
+<input type="text" name="patch_version"
+       class="form-control" required>
+</div>
+
+<div class="mb-3">
+<label>Status</label>
+<select name="status" class="form-control">
+
+<option value="Installed">Installed</option>
+<option value="Pending">Pending</option>
+<option value="Failed">Failed</option>
+
+</select>
+</div>
+
+<button type="submit" class="btn btn-success w-100">
+Add Patch
+</button>
+
+</form>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- Patch List Card -->
+<div class="col-md-8">
+
+<div class="card shadow">
+
+<div class="card-header bg-warning">
+Patch History
+</div>
+
+<div class="card-body">
+
+<table class="table table-striped">
+
+<thead class="table-dark">
+
+<tr>
+<th>ID</th>
+<th>System</th>
+<th>Version</th>
+<th>Status</th>
+<th>Date</th>
+</tr>
+
+</thead>
+
+<tbody>
+
+{% for patch in patches %}
+
+<tr>
+
+<td>{{ patch.id }}</td>
+
+<td>{{ patch.system_name }}</td>
+
+<td>{{ patch.patch_version }}</td>
+
+<td>
+
+{% if patch.status == "Installed" %}
+<span class="badge bg-success">
+Installed
+</span>
+
+{% elif patch.status == "Pending" %}
+<span class="badge bg-warning">
+Pending
+</span>
+
+{% else %}
+<span class="badge bg-danger">
+Failed
+</span>
+
+{% endif %}
+
+</td>
+
+<td>{{ patch.date }}</td>
+
+</tr>
+
+{% endfor %}
+
+</tbody>
+
+</table>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+{% endblock %}

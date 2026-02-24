@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h3>Running Processes</h3>
+
+<table class="table table-striped shadow">
+
+<tr>
+<th>PID</th>
+<th>Name</th>
+</tr>
+
+{% for process in processes %}
+
+<tr>
+<td>{{ process.pid }}</td>
+<td>{{ process.name }}</td>
+</tr>
+
+{% endfor %}
+
+</table>
+
+{% endblock %}

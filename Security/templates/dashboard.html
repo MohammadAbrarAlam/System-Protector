@@ -1,0 +1,123 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<!-- Carousel -->
+<div id="securityCarousel" class="carousel slide mb-4">
+
+  <div class="carousel-inner">
+
+    <div class="carousel-item active">
+      <img src="https://source.unsplash.com/1200x400/?cybersecurity"
+           class="d-block w-100">
+      <div class="carousel-caption">
+        <h3>System Monitoring</h3>
+        <p>Monitor CPU, RAM, Disk in real-time</p>
+      </div>
+    </div>
+
+    <div class="carousel-item">
+      <img src="https://source.unsplash.com/1200x400/?server"
+           class="d-block w-100">
+      <div class="carousel-caption">
+        <h3>Firewall Protection</h3>
+        <p>Secure your systems from threats</p>
+      </div>
+    </div>
+
+    <div class="carousel-item">
+      <img src="https://source.unsplash.com/1200x400/?technology"
+           class="d-block w-100">
+      <div class="carousel-caption">
+        <h3>Patch Management</h3>
+        <p>Keep systems updated and secure</p>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+
+<!-- Cards -->
+<div class="row">
+
+  <div class="col-md-3">
+    <div class="card shadow">
+
+      <div class="card-body text-center">
+
+        <h5 class="card-title">System Status</h5>
+
+        <p>View CPU, RAM, Disk usage</p>
+
+        <a href="/system-status/" class="btn btn-primary">
+            View
+        </a>
+
+      </div>
+
+    </div>
+  </div>
+
+
+  <div class="col-md-3">
+    <div class="card shadow">
+
+      <div class="card-body text-center">
+
+        <h5 class="card-title">Processes</h5>
+
+        <p>Monitor running processes</p>
+
+        <a href="/processes/" class="btn btn-success">
+            View
+        </a>
+
+      </div>
+
+    </div>
+  </div>
+
+
+  <div class="col-md-3">
+    <div class="card shadow">
+
+      <div class="card-body text-center">
+
+        <h5 class="card-title">Firewall</h5>
+
+        <p>Check firewall status</p>
+
+        <a href="/firewall/" class="btn btn-danger">
+            View
+        </a>
+
+      </div>
+
+    </div>
+  </div>
+
+
+  <div class="col-md-3">
+    <div class="card shadow">
+
+      <div class="card-body text-center">
+
+        <h5 class="card-title">Patches</h5>
+
+        <p>Manage system patches</p>
+
+        <a href="/patches/" class="btn btn-warning">
+            View
+        </a>
+
+      </div>
+
+    </div>
+  </div>
+
+
+</div>
+
+{% endblock %}
