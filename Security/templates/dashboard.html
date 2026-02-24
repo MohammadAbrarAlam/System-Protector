@@ -1,34 +1,54 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block content %}
 
 <!-- Carousel -->
-<div id="securityCarousel" class="carousel slide mb-4">
+<div id="securityCarousel" class="carousel slide mb-4" data-bs-ride="carousel">
 
-  <div class="carousel-inner">
+  <!-- Indicators -->
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#securityCarousel" data-bs-slide-to="0" class="active"></button>
+    <button type="button" data-bs-target="#securityCarousel" data-bs-slide-to="1"></button>
+    <button type="button" data-bs-target="#securityCarousel" data-bs-slide-to="2"></button>
+  </div>
 
+  <div class="carousel-inner rounded shadow">
+
+    <!-- Slide 1 -->
     <div class="carousel-item active">
-      <img src="https://source.unsplash.com/1200x400/?cybersecurity"
-           class="d-block w-100">
-      <div class="carousel-caption">
+      <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=1200&q=80"
+           class="d-block w-100"
+           style="height:400px; object-fit:cover;"
+           alt="Cybersecurity">
+
+      <div class="carousel-caption bg-dark bg-opacity-50 rounded p-2">
         <h3>System Monitoring</h3>
         <p>Monitor CPU, RAM, Disk in real-time</p>
       </div>
     </div>
 
+    <!-- Slide 2 -->
     <div class="carousel-item">
-      <img src="https://source.unsplash.com/1200x400/?server"
-           class="d-block w-100">
-      <div class="carousel-caption">
+      <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80"
+           class="d-block w-100"
+           style="height:400px; object-fit:cover;"
+           alt="Server">
+
+      <div class="carousel-caption bg-dark bg-opacity-50 rounded p-2">
         <h3>Firewall Protection</h3>
         <p>Secure your systems from threats</p>
       </div>
     </div>
 
+    <!-- Slide 3 -->
     <div class="carousel-item">
-      <img src="https://source.unsplash.com/1200x400/?technology"
-           class="d-block w-100">
-      <div class="carousel-caption">
+      <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1200&q=80"
+           class="d-block w-100"
+           style="height:400px; object-fit:cover;"
+           alt="Technology">
+
+      <div class="carousel-caption bg-dark bg-opacity-50 rounded p-2">
         <h3>Patch Management</h3>
         <p>Keep systems updated and secure</p>
       </div>
@@ -36,87 +56,64 @@
 
   </div>
 
+  <!-- Controls -->
+  <button class="carousel-control-prev" type="button" data-bs-target="#securityCarousel" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+  </button>
+
+  <button class="carousel-control-next" type="button" data-bs-target="#securityCarousel" data-bs-slide="next">
+    <span class="carousel-control-next-icon"></span>
+  </button>
+
 </div>
 
 
 <!-- Cards -->
-<div class="row">
+<div class="row g-4">
 
+  <!-- System Status -->
   <div class="col-md-3">
-    <div class="card shadow">
-
-      <div class="card-body text-center">
-
+    <div class="card shadow h-100 text-center">
+      <div class="card-body">
         <h5 class="card-title">System Status</h5>
-
         <p>View CPU, RAM, Disk usage</p>
-
-        <a href="/system-status/" class="btn btn-primary">
-            View
-        </a>
-
+        <a href="/system-status/" class="btn btn-primary">View</a>
       </div>
-
     </div>
   </div>
 
-
+  <!-- Processes -->
   <div class="col-md-3">
-    <div class="card shadow">
-
-      <div class="card-body text-center">
-
+    <div class="card shadow h-100 text-center">
+      <div class="card-body">
         <h5 class="card-title">Processes</h5>
-
         <p>Monitor running processes</p>
-
-        <a href="/processes/" class="btn btn-success">
-            View
-        </a>
-
+        <a href="/processes/" class="btn btn-success">View</a>
       </div>
-
     </div>
   </div>
 
-
+  <!-- Firewall -->
   <div class="col-md-3">
-    <div class="card shadow">
-
-      <div class="card-body text-center">
-
+    <div class="card shadow h-100 text-center">
+      <div class="card-body">
         <h5 class="card-title">Firewall</h5>
-
         <p>Check firewall status</p>
-
-        <a href="/firewall/" class="btn btn-danger">
-            View
-        </a>
-
+        <a href="/firewall/" class="btn btn-danger">View</a>
       </div>
-
     </div>
   </div>
 
-
+  <!-- Patches -->
   <div class="col-md-3">
-    <div class="card shadow">
-
-      <div class="card-body text-center">
-
+    <div class="card shadow h-100 text-center">
+      <div class="card-body">
         <h5 class="card-title">Patches</h5>
-
         <p>Manage system patches</p>
-
-        <a href="/patches/" class="btn btn-warning">
-            View
-        </a>
-
+        <a href="/patches/" class="btn btn-warning">View</a>
       </div>
-
     </div>
   </div>
-
 
 </div>
 
